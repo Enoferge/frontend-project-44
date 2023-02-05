@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import Game from '../src/game.js';
+import startGame from '../src/index.js';
 
 const intro = 'What number is missing in the progression?';
 
@@ -21,5 +21,4 @@ const getQuestion = () => {
   return [`${progressionToShow.join(' ')}`, correctAnswer];
 };
 
-const game = new Game(intro, getQuestion);
-game.startGame();
+startGame(intro, getQuestion);

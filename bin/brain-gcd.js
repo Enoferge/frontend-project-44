@@ -1,13 +1,18 @@
 #!/usr/bin/env node
-import Game from '../src/game.js';
+import startGame from '../src/index.js';
 
 const intro = 'Find the greatest common divisor of given numbers.';
 
 const getCorrectAnswer = (num1, num2) => {
-  if (!num2) {
-    return num1;
+  let i = num1 > num2 ? num2 : num1;
+
+  while (i > 0) {
+    if (num1 % i === 0 && num2 % i === 0) {
+      return i;
+    }
+    i = Math.floor(i / 2);
   }
-  return getCorrectAnswer(num2, num1 % num2);
+  return 1;
 };
 
 const getQuestion = () => {
@@ -19,5 +24,4 @@ const getQuestion = () => {
   return [`${randomNumber1} ${randomNumber2}`, correctAnswer];
 };
 
-const game = new Game(intro, getQuestion);
-game.startGame();
+startGame(intro, getQuestion);

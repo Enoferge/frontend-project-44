@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import Game from '../src/game.js';
+import startGame from '../src/index.js';
 
 const allOperations = ['*', '+', '-'];
 const intro = 'What is the result of the expression?';
@@ -27,5 +27,4 @@ const getQuestion = () => {
   return [`${randomNumber1} ${operation} ${randomNumber2}`, correctAnswer];
 };
 
-const game = new Game(intro, getQuestion);
-game.startGame();
+startGame(intro, getQuestion);

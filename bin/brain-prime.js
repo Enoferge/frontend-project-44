@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import Game from '../src/game.js';
+import startGame from '../src/index.js';
 
 const getCorrectAnswer = (number) => {
   if (number < 2) {
@@ -26,5 +26,4 @@ const getQuestion = () => {
 
 const intro = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const game = new Game(intro, getQuestion);
-game.startGame();
+startGame(intro, getQuestion);
