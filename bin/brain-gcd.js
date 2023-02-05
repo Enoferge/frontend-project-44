@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import startGame from '../src/index.js';
+import Game from '../src/game.js';
 
 const intro = 'Find the greatest common divisor of given numbers.';
 
@@ -24,4 +24,5 @@ const getQuestion = () => {
   return [`${randomNumber1} ${randomNumber2}`, correctAnswer];
 };
 
-startGame(intro, getQuestion);
+const game = new Game(intro, getQuestion);
+game.startGame();

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import startGame from '../src/index.js';
+import Game from '../src/game.js';
 
 const getQuestion = () => {
   const number = Math.floor(Math.random() * 100);
@@ -9,4 +9,5 @@ const getQuestion = () => {
 
 const intro = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-startGame(intro, getQuestion);
+const game = new Game(intro, getQuestion);
+game.startGame();

@@ -1,18 +1,18 @@
 #!/usr/bin/env node
-import startGame from '../src/index.js';
+import Game from '../src/game.js';
 
 const getCorrectAnswer = (number) => {
-  if (number === 1) {
+  if (number < 2) {
     return 'no';
   }
 
-  let i = Math.floor(number / 2);
+  let i = 2;
 
-  while (i > 1) {
+  while (i < number) {
     if (number % i === 0) {
       return 'no';
     }
-    i = Math.floor(i / 2);
+    i += 1;
   }
   return 'yes';
 };
@@ -26,4 +26,5 @@ const getQuestion = () => {
 
 const intro = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-startGame(intro, getQuestion);
+const game = new Game(intro, getQuestion);
+game.startGame();
