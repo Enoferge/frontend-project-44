@@ -4,15 +4,10 @@ import startGame from '../src/index.js';
 const intro = 'Find the greatest common divisor of given numbers.';
 
 const getCorrectAnswer = (num1, num2) => {
-  let i = num1 > num2 ? num2 : num1;
-
-  while (i > 0) {
-    if (num1 % i === 0 && num2 % i === 0) {
-      return i;
-    }
-    i = Math.floor(i / 2);
+  if (!num2) {
+    return num1;
   }
-  return 1;
+  return getCorrectAnswer(num2, num1 % num2);
 };
 
 const getQuestion = () => {
