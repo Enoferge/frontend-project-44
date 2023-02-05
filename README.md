@@ -7,3 +7,5 @@
  https://asciinema.org/connect/715b7ba3-921c-4069-8f53-f5609921a7be
 * Asciinema for _brain-calc_:
  https://asciinema.org/a/As0Cxob77iH3dKMX7fMojoWH5
+* Asciinema for _brain-gcd_:
+ https://asciinema.org/a/DosCCwZhOCMGonQouHsFCNlg0
